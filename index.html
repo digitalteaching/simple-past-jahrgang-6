@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simple Past üben – regelmäßige und unregelmäßige Verben, Englisch Jahrgang 6. Acht Übungen, Punktezähler und Hausaufgaben-Nachweis zum Abfotografieren.">
+<meta name="color-scheme" content="light dark">
+<title>Past Tense Lab – Simple Past üben (Jg. 6)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,500&display=swap">
+<style>
+  :root{
+    --bg:#EDF0F3;
+    --surface:#FFFFFF;
+    --surface-2:#F4F6F8;
+    --ink:#16202B;
+    --ink-soft:#5A6A79;
+    --line:#D9E0E7;
+    --now:#B8442A;
+    --now-bg:#FBEDE9;
+    --now-line:#EBC6BA;
+    --past:#0E6F6E;
+    --past-bg:#E4F1F0;
+    --past-line:#B6D9D6;
+    --good:#1E7A4B;
+    --good-bg:#E3F3E9;
+    --bad:#B3261E;
+    --bad-bg:#FBE7E5;
+    --gold:#8A6410;
+    --gold-bg:#FBF1DA;
+    --shadow:0 1px 2px rgba(22,32,43,.06), 0 6px 20px rgba(22,32,43,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1720; --surface:#17222D; --surface-2:#1E2B37;
+      --ink:#E6EDF3; --ink-soft:#9FB0BF; --line:#2A3A48;
+      --now:#F0906F; --now-bg:#33201A; --now-line:#5A3527;
+      --past:#54C7BC; --past-bg:#11312E; --past-line:#245049;
+      --good:#6BD394; --good-bg:#12301F;
+      --bad:#FF8F84; --bad-bg:#391D1B;
+      --gold:#E7C069; --gold-bg:#32280F;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1720; --surface:#17222D; --surface-2:#1E2B37;
+    --ink:#E6EDF3; --ink-soft:#9FB0BF; --line:#2A3A48;
+    --now:#F0906F; --now-bg:#33201A; --now-line:#5A3527;
+    --past:#54C7BC; --past-bg:#11312E; --past-line:#245049;
+    --good:#6BD394; --good-bg:#12301F;
+    --bad:#FF8F84; --bad-bg:#391D1B;
+    --gold:#E7C069; --gold-bg:#32280F;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{color-scheme:light dark}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%}
+  [hidden]{display:none !important}
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:700;text-wrap:balance;margin:0;line-height:1.15}
+  p{margin:0}
+  button{font:inherit;color:inherit}
+
+  /* ---------- Kopfleiste ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .topbar-in{max-width:900px;margin:0 auto;padding:.5rem 1rem;display:flex;align-items:center;gap:.9rem}
+  .brand{
+    font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.7rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;
+  }
+  .brand b{color:var(--past);font-weight:600}
+  .mini{margin-left:auto;display:flex;align-items:center;gap:.75rem;white-space:nowrap}
+  .mini-num{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;font-size:.82rem;font-weight:600}
+  .mini-num small{color:var(--ink-soft);font-weight:400}
+  .bar{width:110px;height:7px;border-radius:99px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--past);transition:width .35s ease}
+  @media (max-width:700px){ .bar{display:none} .brand span{display:none} }
+
+  main{max-width:900px;margin:0 auto;padding:0 1rem 6rem}
+  .hero{padding:2.4rem 0 1.2rem}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--now)}
+  .hero h1{font-size:clamp(2.1rem,7vw,3.3rem);margin:.5rem 0 .4rem;letter-spacing:-.01em}
+  .hero .lead{color:var(--ink-soft);max-width:60ch}
+
+  /* ---------- Hausaufgaben-Nachweis ---------- */
+  .homework{
+    margin-top:1.5rem;background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;padding:1.1rem;box-shadow:var(--shadow);
+  }
+  .homework.complete{border-color:var(--good);background:var(--good-bg)}
+  .hw-top{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+  .ring{flex:0 0 auto;position:relative;width:84px;height:84px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring-txt{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .ring-txt b{font-size:1.15rem}
+  .ring-txt small{font-size:.6rem;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+  .hw-info{flex:1 1 240px;min-width:0}
+  .hw-title{font-family:"Newsreader",Georgia,serif;font-weight:700;font-size:1.25rem}
+  .hw-sub{color:var(--ink-soft);font-size:.92rem;margin-top:.15rem}
+  .hw-stats{display:flex;gap:1.4rem;margin-top:.6rem;flex-wrap:wrap}
+  .stat{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+  .stat b{font-size:1.35rem;display:block;line-height:1.1}
+  .stat small{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .name-row{display:flex;gap:.5rem;align-items:center;margin-top:.9rem;flex-wrap:wrap}
+  .name-row label{font-size:.85rem;color:var(--ink-soft)}
+  #nameInput{
+    flex:1 1 180px;min-width:0;font:inherit;font-size:1rem;background:var(--surface);color:var(--ink);
+    border:1px solid var(--line);border-radius:9px;padding:.4rem .6rem;min-height:40px;
+  }
+  .proof{
+    margin-top:1rem;border-top:1px dashed var(--good);padding-top:.9rem;
+    display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-end;
+  }
+  .proof .stat b{color:var(--good)}
+  .code{
+    font-family:"JetBrains Mono",monospace;font-size:1.1rem;letter-spacing:.18em;font-weight:600;
+    color:var(--gold);background:var(--gold-bg);border:1px solid var(--gold);
+    border-radius:8px;padding:.25rem .6rem;
+  }
+  .shot{color:var(--good);font-weight:700;font-size:.95rem;flex-basis:100%}
+
+  /* ---------- Merkkasten ---------- */
+  details.cheat{margin-top:1rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  details.cheat > summary{cursor:pointer;list-style:none;padding:.85rem 1.1rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+  details.cheat > summary::-webkit-details-marker{display:none}
+  details.cheat > summary::after{content:"▾";margin-left:auto;color:var(--ink-soft)}
+  details.cheat[open] > summary::after{content:"▴"}
+  .cheat-body{padding:1rem 1.1rem 1.1rem;border-top:1px solid var(--line)}
+  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:.6rem}
+  .rule{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:.6rem .75rem}
+  .rule b{color:var(--now)}
+  .rule small{display:block;color:var(--ink-soft);font-size:.84rem;margin-top:.2rem}
+  .rule code{font-family:"JetBrains Mono",monospace;font-size:.88em;color:var(--past);font-weight:600}
+  .vtable{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.92rem}
+  .vtable th{
+    text-align:left;font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-soft);padding:.3rem .5rem;border-bottom:1px solid var(--line);
+  }
+  .vtable td{padding:.28rem .5rem;border-bottom:1px solid var(--line)}
+  .vtable td:first-child{color:var(--now)}
+  .vtable td:last-child{color:var(--past);font-weight:700}
+  .vwrap{overflow-x:auto}
+  .vcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 1.4rem}
+
+  /* ---------- Sprungnavigation ---------- */
+  .jump{
+    position:sticky;top:42px;z-index:40;margin:1.5rem -1rem 0;padding:.5rem 1rem;
+    display:flex;gap:.4rem;overflow-x:auto;scrollbar-width:none;
+    background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(8px);
+  }
+  .jump::-webkit-scrollbar{display:none}
+  .jump a{
+    flex:0 0 auto;text-decoration:none;color:var(--ink-soft);border:1px solid var(--line);
+    background:var(--surface);border-radius:99px;padding:.3rem .7rem;font-size:.8rem;white-space:nowrap;
+  }
+  .jump a.done{color:var(--good);border-color:var(--good);background:var(--good-bg)}
+  .jump a:hover{color:var(--ink);border-color:var(--past)}
+
+  /* ---------- Aufgabenkarten ---------- */
+  section.task{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:1.3rem 1.1rem 1.2rem;margin-top:1.5rem;box-shadow:var(--shadow);scroll-margin-top:94px;
+  }
+  section.task.done{border-color:var(--good)}
+  .task-head{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.2rem}
+  .task-num{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .level{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:.15rem .5rem;border:1px solid currentColor}
+  .lv-a{color:var(--past)}
+  .lv-b{color:var(--now)}
+  .lv-c{color:var(--ink)}
+  .tick{margin-left:auto;font-size:.78rem;font-family:"JetBrains Mono",monospace;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .tick.done{color:var(--good);font-weight:600}
+  section.task h2{font-size:1.45rem;margin:.15rem 0 .35rem}
+  .hint{color:var(--ink-soft);font-size:.95rem;max-width:64ch}
+  .task-body{margin-top:1rem;display:flex;flex-direction:column;gap:.6rem}
+
+  /* ---------- Items ---------- */
+  .item{border:1px solid var(--line);border-radius:12px;background:var(--surface-2);padding:.7rem .85rem}
+  .item.ok{border-color:var(--good);background:var(--good-bg)}
+  .item.no{border-color:var(--bad);background:var(--bad-bg)}
+  .q{margin-bottom:.4rem}
+  .q .en{font-style:italic}
+  .stem{line-height:2.1}
+  .inf{color:var(--now);font-weight:700}
+  .opts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+  .opt{
+    border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.45rem .8rem;
+    min-height:44px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:.92rem;
+  }
+  .opt:hover:not(:disabled){border-color:var(--past)}
+  .opt:active:not(:disabled){transform:scale(.97)}
+  .opt.ok{border-color:var(--good);color:var(--good);font-weight:600}
+  .opt.no{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+
+  input.gap{
+    font-family:"JetBrains Mono",monospace;font-size:.95rem;background:var(--surface);color:var(--ink);
+    border:1px solid var(--line);border-bottom:2px solid var(--ink-soft);border-radius:7px;
+    padding:.3rem .5rem;min-height:38px;width:9.5rem;
+  }
+  input.gap.ok{border-color:var(--good);border-bottom-color:var(--good);color:var(--good);font-weight:600}
+  input.gap.no{border-color:var(--bad);border-bottom-color:var(--bad);color:var(--bad)}
+  input.gap:focus-visible,.opt:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible,#nameInput:focus-visible{
+    outline:3px solid var(--past);outline-offset:2px;
+  }
+  .cue{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--ink-soft)}
+  .row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.7rem}
+  .btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.45rem .9rem;min-height:40px;cursor:pointer;font-size:.9rem}
+  .btn:hover{border-color:var(--past)}
+  .btn.primary{background:var(--past);border-color:var(--past);color:#fff;font-weight:700}
+  .btn.ghost{color:var(--ink-soft)}
+  .fb{font-size:.9rem;font-weight:700}
+  .fb.ok{color:var(--good)}
+  .fb.no{color:var(--bad)}
+  .solution{margin-top:.45rem;font-size:.9rem;color:var(--ink-soft);border-left:3px solid var(--past);padding-left:.65rem}
+  .solution b{color:var(--past)}
+
+  /* ---------- Verbtrainer (Tabelle) ---------- */
+  .drill{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.5rem}
+  .drill .item{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;flex-wrap:wrap}
+  .drill .inf{flex:0 0 auto;font-size:.95rem}
+  .drill .arrow{color:var(--ink-soft)}
+  .drill input.gap{flex:1 1 auto;width:auto;min-width:0}
+
+  /* ---------- Zuordnen ---------- */
+  .match{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  .match-col{display:flex;flex-direction:column;gap:.4rem}
+  .col-label{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .card{
+    border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:.55rem .7rem;
+    min-height:46px;cursor:pointer;text-align:left;font-family:"JetBrains Mono",monospace;font-size:.95rem;
+  }
+  .card:hover:not(:disabled){border-color:var(--past)}
+  .card.sel{border-color:var(--now);box-shadow:0 0 0 2px var(--now-bg)}
+  .card.done{border-color:var(--good);background:var(--good-bg);color:var(--good);cursor:default}
+  .card.shake{animation:shake .32s}
+  @keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+  /* ---------- Sortieren ---------- */
+  .sort-verbs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem;min-height:44px}
+  .vchip{
+    border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:.35rem .8rem;
+    min-height:40px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:.92rem;
+  }
+  .vchip.sel{border-color:var(--now);box-shadow:0 0 0 2px var(--now-bg)}
+  .buckets{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  @media (max-width:560px){ .buckets{grid-template-columns:1fr} .match{grid-template-columns:1fr} }
+  .bucket{border:2px dashed var(--line);border-radius:12px;background:var(--surface);padding:.6rem;min-height:110px}
+  .bucket h3{font-size:.95rem;font-family:"Atkinson Hyperlegible",sans-serif;margin-bottom:.4rem}
+  .bucket.reg h3{color:var(--past)}
+  .bucket.irr h3{color:var(--now)}
+  .bucket .hold{display:flex;flex-wrap:wrap;gap:.35rem}
+  .bucket .vchip.placed{cursor:default;border-color:var(--good);background:var(--good-bg);color:var(--good)}
+
+  /* ---------- Fehlerjagd ---------- */
+  .words{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.4rem}
+  .w{border:1px solid transparent;border-radius:7px;padding:.24rem .42rem;cursor:pointer;background:var(--surface);min-height:36px}
+  .w:hover:not(:disabled){border-color:var(--now)}
+  .w.hit{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+  .w.miss{border-color:var(--bad);color:var(--bad)}
+
+  /* ---------- Satzbaukasten ---------- */
+  .drop{min-height:54px;border:2px dashed var(--line);border-radius:10px;background:var(--surface);padding:.4rem;display:flex;flex-wrap:wrap;gap:.3rem}
+  .drop.ok{border-style:solid;border-color:var(--good);background:var(--good-bg)}
+  .drop.no{border-style:solid;border-color:var(--bad);background:var(--bad-bg)}
+  .tile{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:.35rem .6rem;min-height:38px;cursor:pointer;font-size:.95rem}
+  .tile:hover{border-color:var(--past)}
+  .tile.used{opacity:.28;pointer-events:none}
+  .bank{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.45rem}
+  .drop .tile{background:var(--surface)}
+
+  /* ---------- Geschichte ---------- */
+  .story{line-height:2.4;font-size:1.02rem}
+  .story input.gap{width:8rem}
+  .wordbank{
+    margin-top:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:.6rem .75rem;font-family:"JetBrains Mono",monospace;font-size:.88rem;color:var(--ink-soft);
+  }
+  .wordbank b{color:var(--now);font-weight:600}
+
+  /* ---------- Blitzrunde ---------- */
+  .blitz{background:linear-gradient(180deg,var(--past-bg),var(--surface));border-color:var(--past-line)}
+  .blitz-stage{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:1.3rem 1rem;text-align:center;min-height:145px;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
+  .blitz-sentence{font-family:"Newsreader",Georgia,serif;font-size:1.3rem;line-height:1.35}
+  .blitz-meta{display:flex;gap:1.2rem;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+  .blitz-meta b{color:var(--ink)}
+  .judge{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+  .judge .btn{min-width:130px;font-weight:700}
+  .j-ok{border-color:var(--good);color:var(--good)}
+  .j-no{border-color:var(--bad);color:var(--bad)}
+  .flash{animation:flash .3s}
+  @keyframes flash{0%{transform:scale(1)}40%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+  footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.85rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><b>Past Tense Lab</b> <span>· Simple Past · Klasse 6</span></div>
+    <div class="mini">
+      <span class="mini-num"><span id="miniTasks">0</span>/8 <small>Übungen</small></span>
+      <span class="mini-num"><span id="miniPts">0</span> <small>Punkte</small></span>
+      <span class="bar"><i id="miniBar"></i></span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">English · Grammar · Simple Past</div>
+    <h1>Past Tense Lab</h1>
+    <p class="lead">Gestern, letzte Woche, vor zwei Jahren &mdash; alles vorbei. Dafür brauchst du das <b>simple past</b>. Regelmäßige Verben bekommen <b>-ed</b>, unregelmäßige haben ihre eigene Form. Acht Übungen, alle nur mit Aussagesätzen.</p>
+
+    <div class="homework" id="homework">
+      <div class="hw-top">
+        <div class="ring">
+          <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+            <circle cx="42" cy="42" r="36" fill="none" stroke="var(--line)" stroke-width="9"></circle>
+            <circle id="ringFill" cx="42" cy="42" r="36" fill="none" stroke="var(--past)" stroke-width="9"
+                    stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="226"
+                    style="transition:stroke-dashoffset .4s ease"></circle>
+          </svg>
+          <div class="ring-txt"><b id="ringNum">0/8</b><small>fertig</small></div>
+        </div>
+        <div class="hw-info">
+          <div class="hw-title" id="hwTitle">Deine Hausaufgabe</div>
+          <div class="hw-sub" id="hwSub">Mach alle acht Übungen komplett. Wenn der Ring voll ist, erscheint hier dein Nachweis &mdash; davon machst du einen Screenshot.</div>
+          <div class="hw-stats">
+            <div class="stat"><b id="statPts">0</b><small>Punkte</small></div>
+            <div class="stat"><b id="statItems">0</b><small>Aufgaben gelöst</small></div>
+            <div class="stat"><b id="statMax">0</b><small>Punkte möglich</small></div>
+          </div>
+          <div class="name-row">
+            <label for="nameInput">Dein Name:</label>
+            <input id="nameInput" type="text" placeholder="Vorname und Nachname" autocomplete="name">
+          </div>
+        </div>
+      </div>
+      <div class="proof" id="proof" hidden>
+        <div class="shot">📸 Fertig! Mach jetzt einen Screenshot von diesem Kasten und schick ihn ab.</div>
+        <div class="stat"><b id="pfName">—</b><small>Name</small></div>
+        <div class="stat"><b id="pfDate">—</b><small>Datum</small></div>
+        <div class="stat"><b id="pfPts">—</b><small>Punkte</small></div>
+        <div><span class="code" id="pfCode">—</span></div>
+      </div>
+    </div>
+
+    <details class="cheat">
+      <summary>Merkkasten öffnen &mdash; die -ed-Regeln und die Verbtabelle</summary>
+      <div class="cheat-body">
+        <div class="rules">
+          <div class="rule"><b>Normalfall</b> <code>+ ed</code><small>work &rarr; worked · play &rarr; played</small></div>
+          <div class="rule"><b>Verb endet auf -e</b> <code>+ d</code><small>like &rarr; liked · live &rarr; lived</small></div>
+          <div class="rule"><b>Kurzer Vokal + 1 Konsonant</b> <code>Konsonant doppelt + ed</code><small>stop &rarr; stopped · plan &rarr; planned</small></div>
+          <div class="rule"><b>Konsonant + y</b> <code>y &rarr; ied</code><small>study &rarr; studied · carry &rarr; carried</small></div>
+          <div class="rule"><b>Vokal + y</b> <code>+ ed</code><small>play &rarr; played · stay &rarr; stayed</small></div>
+          <div class="rule"><b>Unregelmäßig</b> <code>auswendig lernen</code><small>eat &rarr; ate · buy &rarr; bought</small></div>
+        </div>
+        <div class="vwrap">
+          <div class="vcols">
+            <table class="vtable">
+              <tr><th>Infinitiv</th><th>Simple Past</th></tr>
+              <tr><td>to be</td><td>was / were</td></tr>
+              <tr><td>to become</td><td>became</td></tr>
+              <tr><td>to bring</td><td>brought</td></tr>
+              <tr><td>to buy</td><td>bought</td></tr>
+              <tr><td>to catch</td><td>caught</td></tr>
+              <tr><td>to choose</td><td>chose</td></tr>
+              <tr><td>to do</td><td>did</td></tr>
+              <tr><td>to draw</td><td>drew</td></tr>
+              <tr><td>to drink</td><td>drank</td></tr>
+            </table>
+            <table class="vtable">
+              <tr><th>Infinitiv</th><th>Simple Past</th></tr>
+              <tr><td>to drive</td><td>drove</td></tr>
+              <tr><td>to eat</td><td>ate</td></tr>
+              <tr><td>to fall</td><td>fell</td></tr>
+              <tr><td>to feel</td><td>felt</td></tr>
+              <tr><td>to fight</td><td>fought</td></tr>
+              <tr><td>to forget</td><td>forgot</td></tr>
+              <tr><td>to have</td><td>had</td></tr>
+              <tr><td>to sleep</td><td>slept</td></tr>
+            </table>
+          </div>
+        </div>
+        <p class="hint" style="margin-top:.8rem"><b>was</b> steht bei <i>I, he, she, it</i> &mdash; <b>were</b> bei <i>you, we, they</i>.</p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="jump" id="jump" aria-label="Zu den Übungen springen">
+    <a href="#t1" data-task="t1">1 · -ed Formen</a>
+    <a href="#t2" data-task="t2">2 · Paare finden</a>
+    <a href="#t3" data-task="t3">3 · Verbtrainer</a>
+    <a href="#t4" data-task="t4">4 · Sortieren</a>
+    <a href="#t5" data-task="t5">5 · Lückensätze</a>
+    <a href="#t6" data-task="t6">6 · Satzbaukasten</a>
+    <a href="#t7" data-task="t7">7 · Fehlerjagd</a>
+    <a href="#t8" data-task="t8">8 · Die Geschichte</a>
+    <a href="#t9">★ Blitzrunde</a>
+  </nav>
+
+  <section class="task" id="t1">
+    <div class="task-head"><span class="task-num">Übung 1</span><span class="level lv-a">Basis</span><span class="tick" id="tick-t1"></span></div>
+    <h2>Die -ed Formen</h2>
+    <p class="hint">Schreibe das simple past. Achte auf die Schreibregeln aus dem Merkkasten &mdash; manchmal wird ein Buchstabe verdoppelt, manchmal wird aus <i>y</i> ein <i>ied</i>.</p>
+    <div class="task-body"><div class="drill" id="t1-body"></div></div>
+    <div class="row"><button class="btn primary" data-check="t1">Prüfen</button><button class="btn ghost" data-reveal="t1">Lösungen zeigen</button><span class="fb" id="fb-t1"></span></div>
+  </section>
+
+  <section class="task" id="t2">
+    <div class="task-head"><span class="task-num">Übung 2</span><span class="level lv-a">Basis</span><span class="tick" id="tick-t2"></span></div>
+    <h2>Paare finden</h2>
+    <p class="hint">Tippe links einen Infinitiv an, dann rechts die passende Vergangenheitsform.</p>
+    <div class="task-body">
+      <div class="match"><div class="match-col" id="t2-left"></div><div class="match-col" id="t2-right"></div></div>
+      <div class="row"><button class="btn ghost" id="t2-shuffle">Neu mischen</button><span class="fb" id="fb-t2"></span></div>
+    </div>
+  </section>
+
+  <section class="task" id="t3">
+    <div class="task-head"><span class="task-num">Übung 3</span><span class="level lv-b">Standard</span><span class="tick" id="tick-t3"></span></div>
+    <h2>Verbtrainer: alle unregelmäßigen Verben</h2>
+    <p class="hint">Die achtzehn Formen, die du können musst. Tippe die Vergangenheitsform in das Feld und drücke Enter.</p>
+    <div class="task-body"><div class="drill" id="t3-body"></div></div>
+    <div class="row"><button class="btn primary" data-check="t3">Prüfen</button><button class="btn ghost" data-reveal="t3">Lösungen zeigen</button><span class="fb" id="fb-t3"></span></div>
+  </section>
+
+  <section class="task" id="t4">
+    <div class="task-head"><span class="task-num">Übung 4</span><span class="level lv-a">Basis</span><span class="tick" id="tick-t4"></span></div>
+    <h2>Regelmäßig oder unregelmäßig?</h2>
+    <p class="hint">Tippe ein Verb an und dann den Kasten, in den es gehört.</p>
+    <div class="task-body">
+      <div class="sort-verbs" id="t4-pool"></div>
+      <div class="buckets">
+        <div class="bucket reg" data-bucket="reg"><h3>Regelmäßig (+ ed)</h3><div class="hold"></div></div>
+        <div class="bucket irr" data-bucket="irr"><h3>Unregelmäßig</h3><div class="hold"></div></div>
+      </div>
+      <div class="row"><span class="fb" id="fb-t4"></span></div>
+    </div>
+  </section>
+
+  <section class="task" id="t5">
+    <div class="task-head"><span class="task-num">Übung 5</span><span class="level lv-b">Standard</span><span class="tick" id="tick-t5"></span></div>
+    <h2>Lückensätze</h2>
+    <p class="hint">Setze das Verb aus der Klammer ins simple past. Alle Sätze sind Aussagesätze.</p>
+    <div class="task-body" id="t5-body"></div>
+    <div class="row"><button class="btn primary" data-check="t5">Prüfen</button><button class="btn ghost" data-reveal="t5">Lösungen zeigen</button><span class="fb" id="fb-t5"></span></div>
+  </section>
+
+  <section class="task" id="t6">
+    <div class="task-head"><span class="task-num">Übung 6</span><span class="level lv-b">Standard</span><span class="tick" id="tick-t6"></span></div>
+    <h2>Satzbaukasten</h2>
+    <p class="hint">Tippe die Wörter in der richtigen Reihenfolge an. Ein Wort im Satzfeld tippen nimmt es zurück.</p>
+    <div class="task-body" id="t6-body"></div>
+  </section>
+
+  <section class="task" id="t7">
+    <div class="task-head"><span class="task-num">Übung 7</span><span class="level lv-c">Profi</span><span class="tick" id="tick-t7"></span></div>
+    <h2>Fehlerjagd</h2>
+    <p class="hint">In jedem Satz steht eine falsche Vergangenheitsform. Tippe das falsche Wort an.</p>
+    <div class="task-body" id="t7-body"></div>
+  </section>
+
+  <section class="task" id="t8">
+    <div class="task-head"><span class="task-num">Übung 8</span><span class="level lv-c">Profi</span><span class="tick" id="tick-t8"></span></div>
+    <h2>Die Geschichte: Last Saturday</h2>
+    <p class="hint">Setze die passende Form ein. Die Verben stehen jeweils in der Klammer.</p>
+    <div class="task-body">
+      <div class="item"><div class="story" id="t8-story"></div></div>
+      <div class="wordbank">Gemischt: <b>be · have · help · eat · bring · play · feel · sleep · watch · drink</b></div>
+    </div>
+    <div class="row"><button class="btn primary" data-check="t8">Prüfen</button><button class="btn ghost" data-reveal="t8">Lösungen zeigen</button><span class="fb" id="fb-t8"></span></div>
+  </section>
+
+  <section class="task blitz" id="t9">
+    <div class="task-head"><span class="task-num">Bonus</span><span class="level lv-b">Challenge</span></div>
+    <h2>Blitzrunde</h2>
+    <p class="hint">60 Sekunden. Ist die Vergangenheitsform richtig oder falsch? Diese Runde zählt <b>nicht</b> zur Hausaufgabe &mdash; sie ist zum Spaß.</p>
+    <div class="task-body">
+      <div class="blitz-stage">
+        <div class="blitz-meta"><span>Zeit <b id="bzTime">60</b>s</span><span>Punkte <b id="bzScore">0</b></span><span>Serie <b id="bzStreak">0</b></span></div>
+        <div class="blitz-sentence" id="bzSentence">Bereit? Tippe auf Start.</div>
+        <div class="judge" id="bzJudge"><button class="btn primary" id="bzStart">Start</button></div>
+        <div class="cue" id="bzNote"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>English · Grammar · Simple Past, Jahrgang 6</span>
+    <button class="btn ghost" id="resetAll" style="margin-left:auto">Alles zurücksetzen</button>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     Zustand: Punkte pro Aufgabe, Name, Fortschritt (localStorage)
+     ============================================================ */
+  var STORE = "pastlab-jg6-v1";
+  var state = {name:"", pts:{}};
+  try{
+    var raw = localStorage.getItem(STORE);
+    if(raw){ var p = JSON.parse(raw); if(p && typeof p === "object"){ state.name = p.name || ""; state.pts = p.pts || {}; } }
+  }catch(e){ /* privates Fenster o. Ä. – dann eben ohne Speichern */ }
+  function save(){
+    try{ localStorage.setItem(STORE, JSON.stringify(state)); }catch(e){}
+  }
+
+  var tasks = {};          // taskId -> {ids:[], el, tick}
+  var attempts = {};       // itemId -> Anzahl Fehlversuche
+
+  function registerItem(taskId, itemId){
+    if(!tasks[taskId]) tasks[taskId] = {ids:[], el:document.getElementById(taskId), tick:document.getElementById("tick-" + taskId)};
+    tasks[taskId].ids.push(itemId);
+  }
+  function solved(itemId){ return Object.prototype.hasOwnProperty.call(state.pts, itemId); }
+  function scoreFor(itemId){
+    var a = attempts[itemId] || 0;
+    return a === 0 ? 2 : (a <= 2 ? 1 : 0);
+  }
+  function markSolved(itemId){
+    if(solved(itemId)) return;
+    state.pts[itemId] = scoreFor(itemId);
+    save(); refresh();
+  }
+  function missed(itemId){ attempts[itemId] = (attempts[itemId] || 0) + 1; }
+
+  var elMiniTasks = document.getElementById("miniTasks"),
+      elMiniPts = document.getElementById("miniPts"),
+      elMiniBar = document.getElementById("miniBar"),
+      elRingFill = document.getElementById("ringFill"),
+      elRingNum = document.getElementById("ringNum"),
+      elStatPts = document.getElementById("statPts"),
+      elStatItems = document.getElementById("statItems"),
+      elStatMax = document.getElementById("statMax"),
+      elHomework = document.getElementById("homework"),
+      elHwTitle = document.getElementById("hwTitle"),
+      elHwSub = document.getElementById("hwSub"),
+      elProof = document.getElementById("proof"),
+      RING = 226;
+
+  function refresh(){
+    var doneTasks = 0, totalItems = 0, solvedItems = 0, points = 0;
+    Object.keys(tasks).forEach(function(tid){
+      var t = tasks[tid], n = 0;
+      t.ids.forEach(function(id){
+        totalItems++;
+        if(solved(id)){ n++; solvedItems++; points += state.pts[id]; }
+      });
+      var complete = n === t.ids.length && t.ids.length > 0;
+      if(complete) doneTasks++;
+      if(t.tick){
+        t.tick.textContent = complete ? "✓ fertig" : n + "/" + t.ids.length;
+        t.tick.classList.toggle("done", complete);
+      }
+      if(t.el) t.el.classList.toggle("done", complete);
+      var link = document.querySelector('.jump a[data-task="' + tid + '"]');
+      if(link) link.classList.toggle("done", complete);
+    });
+    var maxPoints = totalItems * 2;
+    elMiniTasks.textContent = doneTasks;
+    elMiniPts.textContent = points;
+    elMiniBar.style.width = (doneTasks / 8 * 100) + "%";
+    elRingNum.textContent = doneTasks + "/8";
+    elRingFill.setAttribute("stroke-dashoffset", String(RING - RING * (doneTasks / 8)));
+    elStatPts.textContent = points;
+    elStatItems.textContent = solvedItems + " / " + totalItems;
+    elStatMax.textContent = maxPoints;
+
+    var allDone = doneTasks === 8;
+    elHomework.classList.toggle("complete", allDone);
+    elProof.hidden = !allDone;
+    if(allDone){
+      elRingFill.setAttribute("stroke", "var(--good)");
+      elHwTitle.textContent = "Hausaufgabe erledigt";
+      elHwSub.textContent = "Alle acht Übungen sind komplett. Trag deinen Namen ein, falls noch nicht geschehen, und fotografiere diesen Kasten ab.";
+      buildProof(points, solvedItems);
+    }else{
+      elRingFill.setAttribute("stroke", "var(--past)");
+      elHwTitle.textContent = "Deine Hausaufgabe";
+      elHwSub.textContent = "Mach alle acht Übungen komplett. Wenn der Ring voll ist, erscheint hier dein Nachweis — davon machst du einen Screenshot.";
+    }
+  }
+
+  /* Prüfcode: kurze Quersumme aus Name, Punkten und Datum.
+     Kein Sicherheitsmerkmal, aber ein Screenshot lässt sich damit zuordnen. */
+  function buildProof(points, solvedItems){
+    var d = new Date();
+    var dd = String(d.getDate()).padStart(2,"0") + "." + String(d.getMonth()+1).padStart(2,"0") + "." + d.getFullYear();
+    var name = (state.name || "").trim();
+    document.getElementById("pfName").textContent = name || "(kein Name)";
+    document.getElementById("pfDate").textContent = dd;
+    document.getElementById("pfPts").textContent = points + " / " + (solvedItems * 2);
+    var seed = name.toLowerCase().replace(/\s+/g,"") + "|" + points + "|" + solvedItems + "|" + dd;
+    var h = 5381;
+    for(var i=0;i<seed.length;i++){ h = ((h*33) ^ seed.charCodeAt(i)) >>> 0; }
+    var abc = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", code = "";
+    for(var k=0;k<6;k++){ code += abc[h % abc.length]; h = Math.floor(h / abc.length) + (k+1)*7919; }
+    document.getElementById("pfCode").textContent = code;
+  }
+
+  var nameInput = document.getElementById("nameInput");
+  nameInput.value = state.name;
+  nameInput.addEventListener("input", function(){
+    state.name = nameInput.value; save();
+    if(!elProof.hidden) refresh();
+  });
+
+  /* ============ Hilfsfunktionen ============ */
+  function shuffle(a){
+    a = a.slice();
+    for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’ʼ]/g,"'").replace(/[.!?,;]+$/g,"").replace(/\s+/g," ").trim();
+  }
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html != null) e.innerHTML = html;
+    return e;
+  }
+  function mkInput(label){
+    var i = document.createElement("input");
+    i.type = "text"; i.className = "gap";
+    i.autocapitalize = "off"; i.autocomplete = "off"; i.spellcheck = false;
+    i.setAttribute("autocorrect","off");
+    i.setAttribute("aria-label", label);
+    return i;
+  }
+  function feedback(taskId, right, total){
+    var f = document.getElementById("fb-" + taskId);
+    if(!f) return;
+    f.className = "fb " + (right === total ? "ok" : "no");
+    f.textContent = right + " von " + total + " richtig.";
+  }
+
+  /* ============================================================
+     Übung 1 · Die -ed Formen
+     ============================================================ */
+  var T1 = [
+    {v:"to work",   a:["worked"]},
+    {v:"to play",   a:["played"]},
+    {v:"to watch",  a:["watched"]},
+    {v:"to like",   a:["liked"]},
+    {v:"to stop",   a:["stopped"]},
+    {v:"to live",   a:["lived"]},
+    {v:"to carry",  a:["carried"]},
+    {v:"to plan",   a:["planned"]},
+    {v:"to study",  a:["studied"]},
+    {v:"to dance",  a:["danced"]},
+    {v:"to tidy",   a:["tidied"]},
+    {v:"to visit",  a:["visited"]}
+  ];
+  var typed = {};   // taskId -> [{id, inp, ans, wrap}]
+
+  function buildDrill(taskId, host, data){
+    typed[taskId] = [];
+    data.forEach(function(row, i){
+      var id = taskId + "-" + i;
+      registerItem(taskId, id);
+      var wrap = el("div", "item");
+      wrap.appendChild(el("span", "inf", row.v));
+      wrap.appendChild(el("span", "arrow", "→"));
+      var inp = mkInput(row.v + " im simple past");
+      wrap.appendChild(inp);
+      host.appendChild(wrap);
+      var ref = {id:id, inp:inp, ans:row.a, wrap:wrap};
+      typed[taskId].push(ref);
+      if(solved(id)){ inp.value = row.a[0]; inp.classList.add("ok"); wrap.classList.add("ok"); inp.readOnly = true; }
+      inp.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); checkOne(ref); } });
+      inp.addEventListener("blur", function(){ if(inp.value.trim()) checkOne(ref); });
+    });
+  }
+  function checkOne(ref){
+    if(solved(ref.id)) return true;
+    var v = norm(ref.inp.value);
+    if(!v){ return false; }
+    var hit = ref.ans.some(function(a){ return norm(a) === v; });
+    ref.inp.classList.remove("ok","no");
+    if(ref.wrap) ref.wrap.classList.remove("ok","no");
+    if(hit){
+      ref.inp.classList.add("ok"); ref.inp.readOnly = true;
+      if(ref.wrap) ref.wrap.classList.add("ok");
+      markSolved(ref.id);
+    }else{
+      missed(ref.id);
+      ref.inp.classList.add("no");
+      if(ref.wrap) ref.wrap.classList.add("no");
+    }
+    return hit;
+  }
+  function checkTask(taskId){
+    var list = typed[taskId] || [], right = 0;
+    list.forEach(function(r){ if(solved(r.id) || checkOne(r)) right++; });
+    feedback(taskId, right, list.length);
+  }
+  function revealTask(taskId){
+    (typed[taskId] || []).forEach(function(r){
+      if(solved(r.id)) return;
+      attempts[r.id] = 9;                       // aufgedeckt → 0 Punkte
+      if(r.wrap){
+        if(!r.wrap.querySelector(".solution")) r.wrap.appendChild(el("div","solution","<b>" + r.ans[0] + "</b>"));
+      }else{
+        r.inp.placeholder = r.ans[0];
+      }
+    });
+  }
+  buildDrill("t1", document.getElementById("t1-body"), T1);
+
+  /* ============================================================
+     Übung 2 · Paare finden
+     ============================================================ */
+  var T2 = [
+    {id:"eat", a:"to eat", b:"ate"},
+    {id:"do", a:"to do", b:"did"},
+    {id:"have", a:"to have", b:"had"},
+    {id:"forget", a:"to forget", b:"forgot"},
+    {id:"drive", a:"to drive", b:"drove"},
+    {id:"sleep", a:"to sleep", b:"slept"},
+    {id:"fall", a:"to fall", b:"fell"},
+    {id:"become", a:"to become", b:"became"},
+    {id:"bring", a:"to bring", b:"brought"}
+  ];
+  T2.forEach(function(p){ registerItem("t2", "t2-" + p.id); });
+  var mLeft = document.getElementById("t2-left"), mRight = document.getElementById("t2-right"), sel = null;
+  function buildMatch(){
+    mLeft.innerHTML = '<div class="col-label">Infinitiv</div>';
+    mRight.innerHTML = '<div class="col-label">Simple Past</div>';
+    sel = null;
+    shuffle(T2).forEach(function(p){
+      var b = el("button","card",p.a); b.dataset.id = p.id; b.dataset.side = "a";
+      if(solved("t2-" + p.id)) b.classList.add("done");
+      mLeft.appendChild(b);
+    });
+    shuffle(T2).forEach(function(p){
+      var b = el("button","card",p.b); b.dataset.id = p.id; b.dataset.side = "b";
+      if(solved("t2-" + p.id)) b.classList.add("done");
+      mRight.appendChild(b);
+    });
+  }
+  function matchClick(e){
+    var b = e.target.closest(".card");
+    if(!b || b.classList.contains("done")) return;
+    var fb = document.getElementById("fb-t2");
+    if(!sel){
+      if(b.dataset.side !== "a"){ fb.className = "fb"; fb.textContent = "Fang links an."; return; }
+      sel = b; b.classList.add("sel"); fb.textContent = "";
+      return;
+    }
+    if(b.dataset.side === "a"){ sel.classList.remove("sel"); sel = b; b.classList.add("sel"); return; }
+    if(b.dataset.id === sel.dataset.id){
+      b.classList.add("done"); sel.classList.remove("sel"); sel.classList.add("done");
+      markSolved("t2-" + b.dataset.id);
+      fb.className = "fb ok"; fb.textContent = "Passt!";
+      sel = null;
+    }else{
+      missed("t2-" + b.dataset.id);
+      b.classList.add("shake"); setTimeout(function(){ b.classList.remove("shake"); }, 340);
+      fb.className = "fb no"; fb.textContent = "Noch nicht — schau in die Verbtabelle.";
+    }
+  }
+  mLeft.addEventListener("click", matchClick);
+  mRight.addEventListener("click", matchClick);
+  document.getElementById("t2-shuffle").addEventListener("click", buildMatch);
+  buildMatch();
+
+  /* ============================================================
+     Übung 3 · Verbtrainer (alle unregelmäßigen Verben)
+     ============================================================ */
+  var T3 = [
+    {v:"to eat", a:["ate"]},
+    {v:"to do", a:["did"]},
+    {v:"to have", a:["had"]},
+    {v:"to forget", a:["forgot"]},
+    {v:"to drive", a:["drove"]},
+    {v:"to sleep", a:["slept"]},
+    {v:"to fall", a:["fell"]},
+    {v:"to be (I/he/she/it)", a:["was"]},
+    {v:"to be (you/we/they)", a:["were"]},
+    {v:"to become", a:["became"]},
+    {v:"to bring", a:["brought"]},
+    {v:"to buy", a:["bought"]},
+    {v:"to catch", a:["caught"]},
+    {v:"to choose", a:["chose"]},
+    {v:"to draw", a:["drew"]},
+    {v:"to drink", a:["drank"]},
+    {v:"to feel", a:["felt"]},
+    {v:"to fight", a:["fought"]}
+  ];
+  buildDrill("t3", document.getElementById("t3-body"), T3);
+
+  /* ============================================================
+     Übung 4 · Regelmäßig oder unregelmäßig?
+     ============================================================ */
+  var T4 = [
+    {w:"to play", k:"reg"}, {w:"to eat", k:"irr"}, {w:"to watch", k:"reg"}, {w:"to buy", k:"irr"},
+    {w:"to help", k:"reg"}, {w:"to sleep", k:"irr"}, {w:"to live", k:"reg"}, {w:"to draw", k:"irr"},
+    {w:"to study", k:"reg"}, {w:"to catch", k:"irr"}, {w:"to cook", k:"reg"}, {w:"to feel", k:"irr"},
+    {w:"to dance", k:"reg"}, {w:"to fight", k:"irr"}
+  ];
+  var pool = document.getElementById("t4-pool"), pick = null;
+  T4.forEach(function(v, i){ registerItem("t4", "t4-" + i); });
+  function buildSort(){
+    pool.innerHTML = "";
+    document.querySelectorAll("#t4 .bucket .hold").forEach(function(h){ h.innerHTML = ""; });
+    pick = null;
+    shuffle(T4.map(function(v,i){ return {v:v, i:i}; })).forEach(function(o){
+      var id = "t4-" + o.i;
+      var c = el("button","vchip",o.v.w);
+      c.dataset.idx = o.i;
+      if(solved(id)){
+        c.classList.add("placed");
+        document.querySelector('#t4 .bucket[data-bucket="' + o.v.k + '"] .hold').appendChild(c);
+      }else{
+        pool.appendChild(c);
+      }
+    });
+    if(!pool.children.length) pool.appendChild(el("span","cue","Alle Verben sind einsortiert."));
+  }
+  pool.addEventListener("click", function(e){
+    var c = e.target.closest(".vchip");
+    if(!c || c.classList.contains("placed")) return;
+    if(pick) pick.classList.remove("sel");
+    pick = (pick === c) ? null : c;
+    if(pick) pick.classList.add("sel");
+  });
+  document.querySelectorAll("#t4 .bucket").forEach(function(bk){
+    bk.addEventListener("click", function(){
+      if(!pick) return;
+      var idx = +pick.dataset.idx, id = "t4-" + idx, fb = document.getElementById("fb-t4");
+      if(T4[idx].k === bk.dataset.bucket){
+        markSolved(id);
+        pick.classList.remove("sel"); pick.classList.add("placed");
+        bk.querySelector(".hold").appendChild(pick);
+        pick = null;
+        fb.className = "fb ok"; fb.textContent = "Richtig einsortiert.";
+        if(!pool.children.length) pool.appendChild(el("span","cue","Alle Verben sind einsortiert."));
+      }else{
+        missed(id);
+        bk.classList.add("shake"); setTimeout(function(){ bk.classList.remove("shake"); }, 340);
+        fb.className = "fb no"; fb.textContent = "Das gehört in den anderen Kasten.";
+      }
+    });
+  });
+  buildSort();
+
+  /* ============================================================
+     Übung 5 · Lückensätze
+     ============================================================ */
+  var T5 = [
+    {pre:"Last Monday I", post:"an apple for breakfast.", cue:"eat", a:["ate"]},
+    {pre:"Yesterday Tom", post:"football with his friends.", cue:"play", a:["played"]},
+    {pre:"Last summer we", post:"to Italy.", cue:"drive", a:["drove"]},
+    {pre:"My sister", post:"a new bike last week.", cue:"buy", a:["bought"]},
+    {pre:"On Sunday I", post:"until ten o'clock.", cue:"sleep", a:["slept"]},
+    {pre:"Last night Lisa", post:"a glass of milk.", cue:"drink", a:["drank"]},
+    {pre:"Two years ago Ben", post:"a member of the club.", cue:"become", a:["became"]},
+    {pre:"Last week we", post:"a funny film.", cue:"watch", a:["watched"]},
+    {pre:"Yesterday Anna", post:"her English book at home.", cue:"forget", a:["forgot"]},
+    {pre:"In the art lesson Mia", post:"a big dragon.", cue:"draw", a:["drew"]},
+    {pre:"Last year my brother", post:"in Spain.", cue:"be", a:["was"]},
+    {pre:"Yesterday our cat", post:"a mouse in the garden.", cue:"catch", a:["caught"]},
+    {pre:"Last weekend we", post:"a big party.", cue:"have", a:["had"]},
+    {pre:"On Tuesday I", post:"my homework in the library.", cue:"do", a:["did"]},
+    {pre:"Last month Lena", post:"a new hobby.", cue:"choose", a:["chose"]},
+    {pre:"After the game the boys", post:"very tired.", cue:"feel", a:["felt"]}
+  ];
+  var t5body = document.getElementById("t5-body");
+  typed["t5"] = [];
+  T5.forEach(function(row, i){
+    var id = "t5-" + i;
+    registerItem("t5", id);
+    var wrap = el("div","item");
+    var stem = el("div","stem");
+    stem.appendChild(document.createTextNode(row.pre + " "));
+    var inp = mkInput("Lücke " + (i+1));
+    stem.appendChild(inp);
+    stem.appendChild(document.createTextNode(" " + row.post + " "));
+    stem.appendChild(el("span","cue","(" + row.cue + ")"));
+    wrap.appendChild(stem);
+    t5body.appendChild(wrap);
+    var ref = {id:id, inp:inp, ans:row.a, wrap:wrap};
+    typed["t5"].push(ref);
+    if(solved(id)){ inp.value = row.a[0]; inp.classList.add("ok"); wrap.classList.add("ok"); inp.readOnly = true; }
+    inp.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); checkOne(ref); } });
+    inp.addEventListener("blur", function(){ if(inp.value.trim()) checkOne(ref); });
+  });
+
+  /* ============================================================
+     Übung 6 · Satzbaukasten
+     ============================================================ */
+  var T6 = [
+    "Yesterday I ate an apple",
+    "Last week Tom bought a new bike",
+    "On Sunday we drove to the lake",
+    "Last night Lisa drank a glass of milk",
+    "In the morning Mia drew a picture",
+    "Last year Ben became a member of the club"
+  ];
+  var t6body = document.getElementById("t6-body");
+  T6.forEach(function(sentence, i){
+    var id = "t6-" + i;
+    registerItem("t6", id);
+    var target = sentence.split(" ");
+    var wrap = el("div","item");
+    var drop = el("div","drop"), bank = el("div","bank"), picked = [];
+
+    function refreshTiles(){
+      drop.innerHTML = "";
+      picked.forEach(function(p, idx){
+        var t = el("button","tile",p.word);
+        t.addEventListener("click", function(){
+          if(drop.classList.contains("ok")) return;
+          p.node.classList.remove("used"); picked.splice(idx,1);
+          drop.classList.remove("no"); refreshTiles();
+        });
+        drop.appendChild(t);
+      });
+      if(!picked.length) drop.appendChild(el("span","cue","Satz hier zusammensetzen …"));
+      if(picked.length === target.length){
+        var built = picked.map(function(p){ return p.word; }).join(" ");
+        var hit = norm(built) === norm(sentence);
+        drop.classList.toggle("ok", hit); drop.classList.toggle("no", !hit);
+        if(hit){
+          markSolved(id);
+          if(!wrap.querySelector(".solution")) wrap.appendChild(el("div","solution","<b>" + sentence + ".</b>"));
+        }else{
+          missed(id);
+        }
+      }
+    }
+    shuffle(target).forEach(function(w){
+      var t = el("button","tile",w);
+      t.addEventListener("click", function(){
+        if(drop.classList.contains("ok")) return;
+        t.classList.add("used"); picked.push({word:w, node:t}); refreshTiles();
+      });
+      bank.appendChild(t);
+    });
+    wrap.appendChild(drop); wrap.appendChild(bank);
+    var row = el("div","row");
+    var clr = el("button","btn ghost","Zurücksetzen");
+    clr.addEventListener("click", function(){
+      if(solved(id)) return;
+      picked.forEach(function(p){ p.node.classList.remove("used"); });
+      picked = []; drop.classList.remove("ok","no"); refreshTiles();
+    });
+    row.appendChild(clr); wrap.appendChild(row);
+    t6body.appendChild(wrap);
+    if(solved(id)){
+      drop.innerHTML = ""; drop.classList.add("ok");
+      target.forEach(function(w){ drop.appendChild(el("span","tile",w)); });
+      bank.innerHTML = "";
+      wrap.appendChild(el("div","solution","<b>" + sentence + ".</b>"));
+    }else{
+      refreshTiles();
+    }
+  });
+
+  /* ============================================================
+     Übung 7 · Fehlerjagd
+     ============================================================ */
+  var T7 = [
+    {s:"Yesterday I eated an apple.", bad:2, fix:"ate"},
+    {s:"Last week Tom buyed a new game.", bad:3, fix:"bought"},
+    {s:"Last night Lisa drinked a glass of milk.", bad:3, fix:"drank"},
+    {s:"Last summer they drived to France.", bad:3, fix:"drove"},
+    {s:"Yesterday Mia drawed a picture.", bad:2, fix:"drew"},
+    {s:"Last Monday the cat catched a mouse.", bad:4, fix:"caught"},
+    {s:"Two years ago Ben becomed a teacher.", bad:4, fix:"became"},
+    {s:"Last week I sleeped very well.", bad:3, fix:"slept"},
+    {s:"Yesterday Anna forgetted her book.", bad:2, fix:"forgot"},
+    {s:"Last Friday we fighted for every point.", bad:3, fix:"fought"}
+  ];
+  var t7body = document.getElementById("t7-body");
+  T7.forEach(function(row, i){
+    var id = "t7-" + i;
+    registerItem("t7", id);
+    var wrap = el("div","item"), words = el("div","words"), tokens = row.s.split(" ");
+    tokens.forEach(function(w, k){
+      var b = el("button","w",w);
+      b.addEventListener("click", function(){
+        if(solved(id)) return;
+        if(k === row.bad){
+          b.classList.add("hit"); wrap.classList.add("ok"); wrap.classList.remove("no");
+          Array.prototype.forEach.call(words.children, function(c){ c.disabled = true; });
+          markSolved(id);
+          wrap.appendChild(el("div","solution","Richtig ist: <b>" + row.fix + "</b>."));
+        }else{
+          missed(id);
+          b.classList.add("miss"); wrap.classList.add("no");
+          setTimeout(function(){ b.classList.remove("miss"); wrap.classList.remove("no"); }, 700);
+        }
+      });
+      words.appendChild(b);
+    });
+    wrap.appendChild(words);
+    t7body.appendChild(wrap);
+    if(solved(id)){
+      words.children[row.bad].classList.add("hit");
+      Array.prototype.forEach.call(words.children, function(c){ c.disabled = true; });
+      wrap.classList.add("ok");
+      wrap.appendChild(el("div","solution","Richtig ist: <b>" + row.fix + "</b>."));
+    }
+  });
+
+  /* ============================================================
+     Übung 8 · Die Geschichte
+     ============================================================ */
+  var T8 = {
+    parts:[
+      "Last Saturday ", {cue:"be", a:["was"]}, " a great day. In the morning I ",
+      {cue:"have", a:["had"]}, " breakfast with my family. Then I ",
+      {cue:"help", a:["helped"]}, " my dad in the garden. At twelve o'clock we ",
+      {cue:"eat", a:["ate"]}, " pizza. After lunch my friend Nina ",
+      {cue:"bring", a:["brought"]}, " her new game. We ",
+      {cue:"play", a:["played"]}, " it for two hours. Later I ",
+      {cue:"feel", a:["felt"]}, " really tired, so I ",
+      {cue:"sleep", a:["slept"]}, " on the sofa. In the evening my parents ",
+      {cue:"watch", a:["watched"]}, " a film and I ",
+      {cue:"drink", a:["drank"]}, " hot chocolate. It ",
+      {cue:"be", a:["was"]}, " a perfect day."
+    ]
+  };
+  var story = document.getElementById("t8-story");
+  typed["t8"] = [];
+  (function(){
+    var n = 0;
+    T8.parts.forEach(function(p){
+      if(typeof p === "string"){ story.appendChild(document.createTextNode(p)); return; }
+      var id = "t8-" + n;
+      registerItem("t8", id);
+      var inp = mkInput("Lücke " + (n+1));
+      story.appendChild(inp);
+      story.appendChild(document.createTextNode(" "));
+      story.appendChild(el("span","cue","(" + p.cue + ")"));
+      var ref = {id:id, inp:inp, ans:p.a, wrap:null};
+      typed["t8"].push(ref);
+      if(solved(id)){ inp.value = p.a[0]; inp.classList.add("ok"); inp.readOnly = true; }
+      inp.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); checkOne(ref); } });
+      inp.addEventListener("blur", function(){ if(inp.value.trim()) checkOne(ref); });
+      n++;
+    });
+  })();
+
+  /* Prüf- und Lösungsknöpfe der Tippübungen */
+  document.querySelectorAll("[data-check]").forEach(function(b){
+    b.addEventListener("click", function(){ checkTask(b.dataset.check); });
+  });
+  document.querySelectorAll("[data-reveal]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var t = b.dataset.reveal;
+      revealTask(t);
+      var f = document.getElementById("fb-" + t);
+      f.className = "fb"; f.textContent = "Lösungen stehen unter den Aufgaben — tippe sie ein, dann zählt die Übung als erledigt (ohne Punkte).";
+    });
+  });
+
+  /* ============================================================
+     Bonus · Blitzrunde
+     ============================================================ */
+  var BLITZ = [
+    {s:"Yesterday I ate an apple.", ok:true},
+    {s:"Yesterday I eated an apple.", ok:false, why:"eat → ate"},
+    {s:"Last week Tom bought a bike.", ok:true},
+    {s:"Last week Tom buyed a bike.", ok:false, why:"buy → bought"},
+    {s:"On Sunday we drove to the lake.", ok:true},
+    {s:"On Sunday we drived to the lake.", ok:false, why:"drive → drove"},
+    {s:"Last night Lisa drank her milk.", ok:true},
+    {s:"Last night Lisa drinked her milk.", ok:false, why:"drink → drank"},
+    {s:"Yesterday Mia drew a picture.", ok:true},
+    {s:"Yesterday Mia drawed a picture.", ok:false, why:"draw → drew"},
+    {s:"Last Monday the cat caught a mouse.", ok:true},
+    {s:"Last Monday the cat catched a mouse.", ok:false, why:"catch → caught"},
+    {s:"Two years ago Ben became a teacher.", ok:true},
+    {s:"Two years ago Ben becomed a teacher.", ok:false, why:"become → became"},
+    {s:"Last week I slept very well.", ok:true},
+    {s:"Last week I sleeped very well.", ok:false, why:"sleep → slept"},
+    {s:"Yesterday Anna forgot her book.", ok:true},
+    {s:"Yesterday Anna forgetted her book.", ok:false, why:"forget → forgot"},
+    {s:"Last Friday we fought for every point.", ok:true},
+    {s:"Last Friday we fighted for every point.", ok:false, why:"fight → fought"},
+    {s:"Yesterday Tom played football.", ok:true},
+    {s:"Yesterday Tom plaied football.", ok:false, why:"play → played (Vokal + y)"},
+    {s:"Last week Anna studied for the test.", ok:true},
+    {s:"Last week Anna studyed for the test.", ok:false, why:"study → studied (Konsonant + y)"},
+    {s:"The bus stopped in front of the school.", ok:true},
+    {s:"The bus stoped in front of the school.", ok:false, why:"stop → stopped (Konsonant doppelt)"},
+    {s:"Last year my brother was in Spain.", ok:true},
+    {s:"Last summer we had a big party.", ok:true},
+    {s:"After the game the boys felt tired.", ok:true},
+    {s:"Last month Lena chose a new hobby.", ok:true}
+  ];
+  var bzTime = document.getElementById("bzTime"), bzScore = document.getElementById("bzScore"),
+      bzStreak = document.getElementById("bzStreak"), bzSent = document.getElementById("bzSentence"),
+      bzJudge = document.getElementById("bzJudge"), bzNote = document.getElementById("bzNote");
+  var queue = [], cur = null, bScore = 0, bStreak = 0, bLeft = 60, bTimer = null, bBest = 0;
+
+  function nextCard(){
+    if(!queue.length) queue = shuffle(BLITZ);
+    cur = queue.pop();
+    bzSent.textContent = cur.s;
+    bzSent.classList.remove("flash"); void bzSent.offsetWidth; bzSent.classList.add("flash");
+  }
+  function judge(guess){
+    if(!cur) return;
+    if(guess === cur.ok){
+      bScore++; bStreak++;
+      bzNote.innerHTML = "<span style='color:var(--good)'>Richtig.</span>";
+    }else{
+      bStreak = 0;
+      bzNote.innerHTML = "<span style='color:var(--bad)'>Daneben.</span> " + (cur.why || "Der Satz war korrekt.");
+    }
+    bzScore.textContent = bScore; bzStreak.textContent = bStreak;
+    nextCard();
+  }
+  function endRound(){
+    clearInterval(bTimer); bTimer = null; cur = null;
+    if(bScore > bBest) bBest = bScore;
+    bzSent.innerHTML = "Runde vorbei: <b>" + bScore + "</b> Punkte.";
+    bzNote.innerHTML = "Bester Wert an diesem Gerät: <b>" + bBest + "</b>.";
+    bzJudge.innerHTML = "";
+    var b = el("button","btn primary","Nochmal");
+    b.addEventListener("click", startRound); bzJudge.appendChild(b);
+  }
+  function startRound(){
+    bScore = 0; bStreak = 0; bLeft = 60; queue = [];
+    bzScore.textContent = "0"; bzStreak.textContent = "0"; bzTime.textContent = "60"; bzNote.textContent = "";
+    bzJudge.innerHTML = "";
+    var y = el("button","btn j-ok","✓ richtig"), n = el("button","btn j-no","✗ falsch");
+    y.addEventListener("click", function(){ judge(true); });
+    n.addEventListener("click", function(){ judge(false); });
+    bzJudge.appendChild(y); bzJudge.appendChild(n);
+    nextCard();
+    bTimer = setInterval(function(){
+      bLeft--; bzTime.textContent = bLeft;
+      if(bLeft <= 0) endRound();
+    }, 1000);
+  }
+  document.getElementById("bzStart").addEventListener("click", startRound);
+
+  /* ============ Zurücksetzen ============ */
+  document.getElementById("resetAll").addEventListener("click", function(){
+    if(!confirm("Wirklich alles zurücksetzen? Deine Punkte und der Fortschritt gehen verloren.")) return;
+    try{ localStorage.removeItem(STORE); }catch(e){}
+    location.reload();
+  });
+
+  refresh();
+})();
+</script>
+</body>
+</html>
