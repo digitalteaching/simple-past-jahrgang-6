@@ -4,7 +4,7 @@ Interaktive Übungsseite zum Simple Past: regelmäßige und unregelmäßige Verb
 **Nur Aussagesätze** — keine Verneinungen, keine Fragen. Gedacht als Hausaufgabe
 oder für die Arbeit mit dem iPad im Unterricht. Eine einzige HTML-Datei.
 
-**Direkt üben:** https://teachingeng.github.io/simple-past-jahrgang-6/
+**Direkt üben:** https://digitalteaching.github.io/simple-past-jahrgang-6/
 
 ## Hausaufgaben-Nachweis
 
